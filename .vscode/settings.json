@@ -1,0 +1,18 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "workbench.sideBar.location": "right",
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": true,
+      "plaintext": true,
+      "markdown": false
+    },
+    "search.exclude": {
+      "**/build": true,
+      "**/dist": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always"
+  }
+  
