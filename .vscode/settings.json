@@ -1,18 +1,19 @@
 {
-    "editor.inlineSuggest.enabled": true,
-    "workbench.sideBar.location": "right",
-    "editor.minimap.enabled": false,
-    "editor.formatOnSave": true,
-    "github.copilot.enable": {
-      "*": true,
-      "yaml": true,
-      "plaintext": true,
-      "markdown": false
-    },
-    "search.exclude": {
-      "**/build": true,
-      "**/dist": true
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always"
-  }
-  
+  "editor.inlineSuggest.enabled": true,
+  "workbench.sideBar.location": "right",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": false
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/dist": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsdk": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
