@@ -1,67 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Edit Image with OpenAI
 
-## Prerequisite
+My goal was to quickly try out the openAI API to generate images.  
+What I had in mind was the AI assistant could be a renouned interior designer and could help me improve the decoration in my leaving room.
 
-You'll need `node v18+` installed globally (current LTS) and `pnpm v8+`.
+I initially tried to call [this endpoint](https://platform.openai.com/docs/api-reference/images/create-edit) without a mask but it was not working, probably because it's expecting the original image to have the alpha layer (transparency) where you want to modify the image. So instead to modify the original I just provided a mask that I created in Gimp.
 
-I recommend using `Volta` to manage the version of node on your machine.
+## Findings
 
-```bash
-brew install volta
-```
+It's pretty bad... I really wish I had access to GPT4 to play with this a bit more. The result was horrendus.
 
-```
-# install and set default version of node
-volta install node@18.15.0
+I tried to type everything but I found out that the openai SDK is expecting a `File` (DOM) type and is not accepting `ReadableStream` so I ended up using a `fetch` and hit the API directly.
 
-# install latest pnpm globally
-volta install pnpm
-```
-
-By default this template is pinning the version of node in the `package.json`
-
-## Use this template
-
-This is the command to run in order to create an empty project with this template.
-It's setup with:
-
-- Typescript
-- Tailwind
-- Eslint
-- Prettier
-- [tailwind-prettier](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier) rules
-- VSCode plugins recommendations
-- pnpm
-
-```bash
-npx create-next-app@latest \
-    --typescript \
-    --tailwind \
-    --eslint \
-    --use-pnpm \
-    --experimental-app \
-    --import-alias '@/*'
-    --example https://github.com/Maxwell2022/next-template
-```
-
-To simplify, you can create an alias in your `~/.zshrc`:
-
-```bash
-alias "new-project"="npx create-next-app@latest --typescript --tailwind --eslint --use-pnpm --experimental-app --import-alias '@/*' --example https://github.com/Maxwell2022/next-template"
-```
-
-Reload your config:
-
-```bash
-source ~/.zshrc
-```
-
-And then simply call :
-
-```bash
-new-project project-name
-```
+It was a fun little project :)
 
 ## Todo
 
-- [ ] Add [renovate bot](https://docs.renovatebot.com/) configuration
+I'd really like to load the image to preview it. And what I have in mind is to load it in some kind of canva where we can create this alpha layer by deleting part of the image with a brush. I never used canvas so I'm not sure that's possible.
