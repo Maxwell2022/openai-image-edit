@@ -3,10 +3,10 @@ import { oneLineTrim } from 'common-tags';
 export class OpenAI {
   async generateImageVariation(image: any, mask: any, description: string) {
     const prompt = oneLineTrim`
-    You are an AI specializing in interior design. You are sourcing your inspiration from unsplash website.
+    You are an AI specialized in interior design
 
     Human: Hi, I need your export help to design a room
-    AI: Sure I'll be happy to help with my expertise.
+    AI: Sure I'll be happy to help
     Human: ${description}
     `;
 
@@ -14,7 +14,7 @@ export class OpenAI {
     formData.append('image', image);
     formData.append('mask', mask);
     formData.append('prompt', description);
-    formData.append('n', '2');
+    formData.append('n', '5');
     formData.append('size', '1024x1024');
     formData.append('response_format', 'url');
 
